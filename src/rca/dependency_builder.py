@@ -143,3 +143,46 @@ def build_i2c_dependency_graph() -> DependencyGraph:
     )
  
     return graph
+
+def add_device_tree_dependencies(
+    graph: DependencyGraph,
+    dts_file: Path,
+) -> DependencyGraph:
+    """Add Device Tree relationships to an existing graph."""
+
+    from src.devicetree.parser import (
+        parse_i2c1_node,
+        parse_temperature_sensor_node,
+    )
+
+    i2c1 = parse_i2c1_node(dts_file)
+    sensor = parse_temperature_sensor_node(dts_file)
+
+    if i2c1 is not None:
+        graph.add_node(
+            DependencyNode(
+                name=i2c1.name,
+                node_type="device_tree",
+                properties=i2c1.properties,
+            )
+        )
+
+    if sensor is not None:
+        graph.add_node(
+            DependencyNode(
+                name=sensor.name,
+                node_type="device_tree",
+                properties=sensor.properties,
+            )
+        )
+
+    if i2c1 is not None and sensor is not None:
+        graph.add_edge(
+            DependencyEdge(
+                source=i2c1.name,
+                target=sensor.name,
+                relationship="contains",
+            )
+        )
+
+    return graph
