@@ -1,0 +1,52 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+ 
+# Virtual environments
+.venv/
+venv/
+env/
+ 
+# Environment variables / secrets
+.env
+.env.*
+ 
+# IDE
+.vscode/
+.idea/
+ 
+# OS
+.DS_Store
+Thumbs.db
+ 
+# Test / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+ 
+# Build
+build/
+dist/
+*.egg-info/
+ 
+# Logs
+*.log
+ 
+# Local data
+data/local/
+ 
+# Model files
+*.bin
+*.pt
+*.pth
+*.onnx
+models/
+ 
+# FAISS indexes generated locally
+*.faiss
+ 
+# Temporary files
+tmp/
+temp/
+

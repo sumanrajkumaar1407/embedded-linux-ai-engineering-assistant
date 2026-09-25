@@ -1,0 +1,30 @@
+MODULE INFORMATION
+==================
+ 
+Module:
+i2c_designware
+ 
+Driver:
+DesignWare I2C Platform Driver
+ 
+Subsystem:
+I2C
+ 
+Source:
+i2c_designware_platform.c
+ 
+Driver Type:
+Platform Driver
+ 
+Probe Function:
+dw_i2c_probe
+ 
+Device Tree Matching:
+snps,designware-i2c
+ 
+Dependencies:
+- I2C core
+- DesignWare I2C core
+- DesignWare I2C platform driver
+- Clock framework
+- Device Tree

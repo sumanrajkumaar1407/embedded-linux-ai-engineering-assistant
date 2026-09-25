@@ -1,0 +1,23 @@
+/dts-v1/;
+ 
+/ {
+    model = "AI-BSP-Diagnostic-Board";
+    compatible = "demo,ai-bsp-board";
+ 
+    chosen {
+        bootargs = "console=ttyS0,115200";
+    };
+};
+ 
+&i2c1 {
+    status = "okay";
+ 
+    clock-frequency = <400000>;
+ 
+    temp_sensor@48 {
+        compatible = "demo,temp-sensor";
+        reg = <0x48>;
+        status = "okay";
+    };
+};
+

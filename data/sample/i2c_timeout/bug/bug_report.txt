@@ -1,0 +1,40 @@
+BUG REPORT
+==========
+ 
+Title:
+I2C temperature sensor is not detected during boot
+ 
+Description:
+The temperature sensor connected to I2C1 is not detected after
+system boot.
+ 
+The issue is reproducible after every reboot.
+ 
+Expected behavior:
+The temperature sensor should be detected during kernel initialization
+and should be accessible from userspace.
+ 
+Actual behavior:
+The I2C controller fails to initialize and the temperature sensor
+is not detected.
+ 
+Subsystem:
+I2C
+ 
+Affected module:
+i2c_designware
+ 
+Affected peripheral:
+Temperature sensor connected to I2C1
+ 
+Severity:
+ERROR
+ 
+Reproducibility:
+100%
+ 
+First observed:
+After BSP integration of the new temperature sensor.
+ 
+Initial engineer observation:
+The I2C controller reports a timeout during initialization.

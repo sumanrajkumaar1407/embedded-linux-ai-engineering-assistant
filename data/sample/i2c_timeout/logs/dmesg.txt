@@ -1,0 +1,9 @@
+[    0.000000] Linux version 6.1.0-custom
+[    0.842135] i2c_designware 12340000.i2c: controller initialized
+[    0.843012] i2c_designware 12340000.i2c: attempting bus recovery
+[    0.850421] i2c_designware 12340000.i2c: controller timed out
+[    0.850923] i2c_designware 12340000.i2c: timeout waiting for bus ready
+[    0.851442] i2c_designware 12340000.i2c: probe failed with error -110
+[    0.852113] i2c i2c-1: adapter registration failed
+[    0.853001] temp_sensor 1-0048: probe deferred
+[    1.124521] systemd[1]: Started Hardware Monitoring Service.
